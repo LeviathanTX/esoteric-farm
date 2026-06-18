@@ -501,6 +501,47 @@ footer{
   .stat{border-right:none;border-bottom:1px solid var(--rule)}
   .aff-grid{gap:1.5rem}
 }
+
+/* FAQ */
+.faq-sec{
+  padding:5.5rem 0;
+  background:var(--off);
+  border-bottom:1px solid var(--rule);
+}
+.faq-hd{text-align:center;margin-bottom:3rem}
+.faq-hd .ey{justify-content:center;display:flex}
+.faq-list{max-width:760px;margin:0 auto}
+.faq-item{
+  border-bottom:1px solid var(--rule);
+  padding:1.1rem 0;
+}
+.faq-item summary{
+  cursor:pointer;
+  font-family:var(--fh);
+  font-size:1.05rem;
+  color:var(--ink);
+  list-style:none;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{
+  content:'+';
+  font-family:var(--fb);
+  font-size:1.3rem;
+  color:var(--burgundy);
+  flex-shrink:0;
+  transition:transform .2s;
+}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{
+  margin-top:.75rem;
+  color:var(--stone);
+  font-size:.92rem;
+  line-height:1.65;
+}
 </style>
 <script type="application/ld+json">
 {
@@ -547,6 +588,70 @@ footer{
     {"@type": "Organization", "name": "United States Equestrian Federation (USEF)"},
     {"@type": "Organization", "name": "United States Hunter Jumper Association (USHJA)"},
     {"@type": "Organization", "name": "Texas Hunter Jumper Association (THJA)"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need to already own a horse to train at Esoteric Farm?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Many of our riders lease or are searching for their next partner. Kersten's eye for a correctly scoped, amateur-friendly horse has placed countless clients with their 'horse of a lifetime' — whether that means a lease, a purchase, or working toward ownership over time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this program only for competitive riders, or is it beginner-friendly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both. We work with riders newer to the sport who want a clear, supported path forward, as well as experienced amateurs training for the show ring. What matters most is that you want a serious program without the pressure of a big barn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I haven't ridden in years — can I come back through your program?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — our Re-Entry Program is built for exactly this. It rebuilds confidence systematically, from foundational flat work back to the show ring, at whatever pace fits your life."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's included with full-care boarding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Full daily stall care and mucking, premium feed management, daily turnout, blanketing and grooming, and veterinary-informed oversight from Nancy, who holds a Doctor of Veterinary Medicine. We intentionally keep boarding spots limited."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is Esoteric Farm located, and what areas do you serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We're at 13404 Cameron Rd in Manor, TX, and serve riders across Austin, Pflugerville, Westlake, Round Rock, Cedar Park, Leander, and Lakeway."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What show circuit do Esoteric Farm riders compete on?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We target Hunter Amateur and Adult Equitation on the Texas circuit, with show campaign planning that handles entries, stabling, coaching, and logistics. Beyond Texas, our riders and horses have also competed in Florida, Kentucky, Colorado, Illinois, Tennessee, and California. The farm is affiliated with USEF, USHJA, and THJA."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I get started?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Call 512-272-4301 or email info@esotericfarm.com. We'll talk through your goals, your horse situation, and find the program that fits."
+      }
+    }
   ]
 }
 </script>
@@ -768,6 +873,47 @@ footer{
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec" id="faq">
+  <div class="inner">
+    <div class="faq-hd reveal">
+      <span class="ey">Common Questions</span>
+      <h2>Frequently Asked Questions</h2>
+      <div class="rule-h cx"></div>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item" open>
+        <summary>Do I need to already own a horse to train at Esoteric Farm?</summary>
+        <p>No. Many of our riders lease or are searching for their next partner. Kersten's eye for a correctly scoped, amateur-friendly horse has placed countless clients with their "horse of a lifetime" — whether that means a lease, a purchase, or working toward ownership over time.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is this program only for competitive riders, or is it beginner-friendly?</summary>
+        <p>Both. We work with riders newer to the sport who want a clear, supported path forward, as well as experienced amateurs training for the show ring. What matters most is that you want a serious program without the pressure of a big barn.</p>
+      </details>
+      <details class="faq-item">
+        <summary>I haven't ridden in years — can I come back through your program?</summary>
+        <p>Yes — our Re-Entry Program is built for exactly this. It rebuilds confidence systematically, from foundational flat work back to the show ring, at whatever pace fits your life.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What's included with full-care boarding?</summary>
+        <p>Full daily stall care and mucking, premium feed management, daily turnout, blanketing and grooming, and veterinary-informed oversight from Nancy, who holds a Doctor of Veterinary Medicine. We intentionally keep boarding spots limited.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Where is Esoteric Farm located, and what areas do you serve?</summary>
+        <p>We're at 13404 Cameron Rd in Manor, TX, and serve riders across Austin, Pflugerville, Westlake, Round Rock, Cedar Park, Leander, and Lakeway.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What show circuit do Esoteric Farm riders compete on?</summary>
+        <p>We target Hunter Amateur and Adult Equitation on the Texas circuit, with show campaign planning that handles entries, stabling, coaching, and logistics. Beyond Texas, our riders and horses have also competed in Florida, Kentucky, Colorado, Illinois, Tennessee, and California. The farm is affiliated with USEF, USHJA, and THJA.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do I get started?</summary>
+        <p>Call 512-272-4301 or email info@esotericfarm.com. We'll talk through your goals, your horse situation, and find the program that fits.</p>
+      </details>
     </div>
   </div>
 </section>
