@@ -542,6 +542,151 @@ footer{
   font-size:.92rem;
   line-height:1.65;
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   ESOTERIC FARM — CONVERSION PATCH CSS
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── 01 · PRE-FILLED THREE-DOOR INTAKE ──────────────────────── */
+.intake-sec{
+  padding:4.5rem 0 5rem;
+  background:var(--white);
+  border-bottom:1px solid var(--rule);
+}
+.intake-hd{text-align:center;max-width:620px;margin:0 auto 2.75rem}
+.intake-hd .ey{display:block}
+.intake-hd h2{margin:0 0 .25rem}
+.intake-hd p{color:var(--stone);font-size:.98rem}
+
+.intake-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border:1px solid var(--rule);
+}
+.door{
+  display:flex;flex-direction:column;
+  padding:2.1rem 1.75rem 1.9rem;
+  border-right:1px solid var(--rule);
+  background:var(--white);
+  transition:background .2s;
+}
+.door:last-child{border-right:none}
+.door:hover{background:var(--off)}
+.door-n{
+  font-family:var(--fh);font-size:2.1rem;font-weight:700;
+  color:var(--rule);line-height:1;margin-bottom:.85rem;
+  transition:color .2s;
+}
+.door:hover .door-n{color:var(--gold)}
+.door h3{
+  font-family:var(--fh);font-size:1.22rem;font-weight:600;
+  color:var(--ink);line-height:1.25;margin-bottom:.6rem;
+}
+.door p{
+  font-size:.92rem;color:var(--stone);line-height:1.6;
+  margin-bottom:1.6rem;
+}
+.door-go{
+  margin-top:auto;
+  font-family:var(--fs);font-size:.58rem;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:var(--burgundy);transition:color .2s;
+}
+.door:hover .door-go{color:var(--ink)}
+
+.intake-alt{
+  text-align:center;margin-top:1.6rem;
+  font-size:.95rem;color:var(--stone);
+}
+.intake-alt a{
+  color:var(--burgundy);font-weight:600;
+  border-bottom:1px solid var(--gold);
+}
+.intake-alt a:hover{color:var(--ink)}
+
+/* ── 02 · MOBILE STICKY CALL BAR ────────────────────────────── */
+.callbar{display:none}
+@media(max-width:768px){
+  .callbar{
+    position:fixed;left:0;right:0;bottom:0;z-index:120;
+    display:grid;grid-template-columns:1.45fr 1fr;
+    background:var(--burgundy);
+    box-shadow:0 -2px 18px rgba(0,0,0,.18);
+  }
+  .callbar a{
+    font-family:var(--fs);font-size:.66rem;font-weight:700;
+    letter-spacing:.12em;text-transform:uppercase;
+    color:var(--white);text-align:center;
+    padding:1.15rem .75rem;
+    border-left:1px solid rgba(255,255,255,.22);
+  }
+  .callbar a:first-child{border-left:none}
+  footer{padding-bottom:6.5rem}
+}
+
+/* ── 03 · RE-ENTRY BAND ─────────────────────────────────────── */
+.reentry-sec{
+  padding:5.5rem 0;
+  background:var(--burgundy);
+  border-top:1px solid var(--rule);
+}
+.reentry-grid{
+  display:grid;grid-template-columns:.9fr 1.1fr;
+  gap:4rem;align-items:center;
+}
+.reentry-img-wrap{position:relative}
+.reentry-img-wrap::before{
+  content:'';position:absolute;
+  bottom:-12px;right:-12px;
+  width:78%;height:78%;
+  border:2px solid var(--gold);
+  z-index:0;
+}
+.reentry-img{
+  position:relative;z-index:1;
+  width:100%;height:430px;object-fit:cover;
+}
+.reentry-sec .ey{color:var(--gold-lt)}
+.reentry-sec h2{
+  color:var(--white);
+  font-size:clamp(1.9rem,3.4vw,2.85rem);
+}
+.reentry-sec .rule-h{background:var(--gold)}
+.reentry-sec p{color:rgba(255,255,255,.82);margin-bottom:1rem}
+.reentry-note{
+  font-family:var(--fh);font-style:italic;
+  font-size:1.15rem;line-height:1.5;
+  color:var(--gold-lt) !important;
+  border-left:3px solid var(--gold);
+  padding:.6rem 0 .6rem 1.25rem;
+  margin:1.75rem 0 2rem !important;
+}
+.btn-gold{
+  font-family:var(--fs);font-size:.6rem;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;
+  padding:.9rem 2.25rem;
+  background:var(--gold);color:var(--ink);
+  border:2px solid var(--gold);
+  display:inline-block;
+  transition:background .2s,color .2s;
+}
+.btn-gold:hover{background:transparent;color:var(--gold-lt)}
+
+/* Programs card 05 becomes a link */
+.prog-card-link{
+  display:flex;flex-direction:column;
+  text-decoration:none;
+}
+.prog-card-link .door-go{margin-top:1.1rem}
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media(max-width:900px){
+  .intake-grid{grid-template-columns:1fr}
+  .door{border-right:none;border-bottom:1px solid var(--rule)}
+  .door:last-child{border-bottom:none}
+  .reentry-grid{grid-template-columns:1fr;gap:2.5rem}
+  .reentry-img-wrap::before{display:none}
+  .reentry-img{height:300px}
+}
 </style>
 <script type="application/ld+json">
 {
@@ -665,11 +810,12 @@ footer{
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#programs">Programs</a></li>
+      <li><a href="#re-entry">Coming Back</a></li>
       <li><a href="#team">Trainers</a></li>
       <li><a href="#boarding">Boarding</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="mailto:info@esotericfarm.com" class="nav-btn">Questions? Send us an email</a>
+    <a href="#start" class="nav-btn">Start the conversation</a>
   </div>
 </nav>
 
@@ -684,8 +830,8 @@ footer{
       <h1 class="hero-tagline">Serious Training for Adult Amateurs.</h1>
       <p class="hero-sub">Boutique training rooted in Horse Care — Small enough to know you and your horse — serious enough to win.</p>
       <div class="hero-btns">
-        <a href="#programs" class="btn-primary">Our Programs</a>
-        <a href="mailto:info@esotericfarm.com" class="btn-outline">Questions? Send us an email</a>
+        <a href="#start" class="btn-primary">Start the conversation</a>
+        <a href="tel:3476882963" class="btn-outline">Call 347-688-2963</a>
       </div>
     </div>
     <div class="hero-img-side">
@@ -694,6 +840,46 @@ footer{
       </div>
       <p class="hero-caption">Manor, Texas &nbsp;·&nbsp; Est. from Cameron Equestrian</p>
     </div>
+  </div>
+</section>
+
+<!-- INTAKE -->
+<section class="intake-sec" id="start">
+  <div class="inner">
+    <div class="intake-hd reveal">
+      <span class="ey">Start Here</span>
+      <h2>Tell us where you are.</h2>
+      <div class="rule-h cx"></div>
+      <p>Pick the line that sounds most like you. We'll open an email with the first few questions already written — you fill in the blanks and hit send.</p>
+    </div>
+
+    <div class="intake-grid reveal">
+      <a class="door" href="mailto:info@esotericfarm.com?subject=Re-Entry%20Program%20%E2%80%94%20getting%20back%20in%20the%20saddle&body=Hi%20Kersten%2C%0A%0AI%20rode%20for%20___%20years%20and%20have%20been%20out%20of%20the%20saddle%20since%20___.%0A%0AWhat%20I%27d%20like%20to%20get%20back%20to%3A%0A%0AI%20can%20ride%20about%20___%20days%20a%20week.%0A%0AThanks%2C%0A">
+        <span class="door-n">01</span>
+        <h3>I'm coming back after time away</h3>
+        <p>Months or decades — it doesn't matter. We'll start where you actually are.</p>
+        <span class="door-go">Write this email →</span>
+      </a>
+
+      <a class="door" href="mailto:info@esotericfarm.com?subject=Looking%20at%20barns%20in%20the%20Austin%20area&body=Hi%20Kersten%2C%0A%0ARight%20now%20I%27m%20___%20(riding%20at%20another%20barn%20%2F%20relocating%20to%20the%20area%20%2F%20just%20starting%20my%20search).%0A%0AI%27m%20interested%20in%3A%20(lessons%20%2F%20full-care%20boarding%20%2F%20show%20campaign%20planning)%0A%0AMy%20horse%20situation%3A%20(I%20own%20%2F%20I%20lease%20%2F%20I%20don%27t%20have%20a%20horse%20yet)%0A%0AWhat%20I%20want%20out%20of%20a%20program%3A%0A%0AThanks%2C%0A">
+        <span class="door-n">02</span>
+        <h3>I'm looking at barns in the area</h3>
+        <p>Lessons, full care, show campaigns. We'll tell you honestly whether we're the fit.</p>
+        <span class="door-go">Write this email →</span>
+      </a>
+
+      <a class="door" href="mailto:info@esotericfarm.com?subject=Horse%20search%20%E2%80%94%20buying%20or%20leasing&body=Hi%20Kersten%2C%0A%0AI%27m%20looking%20to%20(buy%20%2F%20lease)%20a%20horse.%0A%0AWhere%20I%20ride%20now%3A%0A%0AThe%20budget%20range%20I%27m%20working%20with%3A%0A%0AWhat%20I%20want%20to%20do%20with%20the%20horse%20(hunters%20%2F%20equitation%20%2F%20just%20enjoy%20it)%3A%0A%0AThanks%2C%0A">
+        <span class="door-n">03</span>
+        <h3>I'm searching for a horse</h3>
+        <p>Buying or leasing. Kersten's eye and Nancy's DVM on the same side of the table.</p>
+        <span class="door-go">Write this email →</span>
+      </a>
+    </div>
+
+    <p class="intake-alt">
+      Prefer to talk? Call or text Kersten at
+      <a href="tel:3476882963">347-688-2963</a> — we answer between lessons.
+    </p>
   </div>
 </section>
 
@@ -748,6 +934,27 @@ footer{
   </div>
 </section>
 
+<!-- RE-ENTRY -->
+<section class="reentry-sec" id="re-entry">
+  <div class="inner">
+    <div class="reentry-grid reveal">
+      <div class="reentry-img-wrap">
+        <img class="reentry-img" src="images/og-image.jpg"
+             alt="Esoteric Farm trainers with horses in the arena">
+      </div>
+      <div class="reentry-text">
+        <span class="ey">Coming Back</span>
+        <h2>You didn't quit. Life got loud.</h2>
+        <div class="rule-h"></div>
+        <p>Most of our riders have a gap in their history — a decade of career, kids, a move across the country, a fall they never quite talked about.</p>
+        <p>The re-entry track starts wherever you actually are, not where you left off. Flat work until it feels like yours again. Then poles. Then a course, if and when you want one. No pressure to show, no timeline you didn't set, and nobody making you explain the gap.</p>
+        <p class="reentry-note">You will not be the only adult here starting over.</p>
+        <a href="mailto:info@esotericfarm.com?subject=Re-Entry%20Program%20%E2%80%94%20getting%20back%20in%20the%20saddle&body=Hi%20Kersten%2C%0A%0AIt%27s%20been%20about%20___%20years%20since%20I%20rode%20regularly.%0A%0ABefore%20the%20gap%20I%20was%20doing%3A%0A%0AWhat%20I%27d%20like%20to%20get%20back%20to%3A%0A%0AThanks%2C%0A" class="btn-gold">Tell us about your gap →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PROGRAMS -->
 <section class="prog-sec" id="programs">
   <div class="inner">
@@ -779,15 +986,16 @@ footer{
         <h3>Show Campaign Planning</h3>
         <p>We manage your entire show calendar — entries, stabling, coaching, and logistics.</p>
       </div>
-      <div class="prog-card" style="border-bottom:none">
+      <a class="prog-card prog-card-link" href="#re-entry" style="border-bottom:none">
         <span class="prog-num">05</span>
         <h3>Re-Entry Program</h3>
         <p>Returning after years away? Our re-entry track rebuilds confidence systematically — from foundational flat work back to the show ring at whatever pace fits your life.</p>
-      </div>
+        <span class="door-go">Read more →</span>
+      </a>
       <div class="prog-card" style="border-bottom:none;background:var(--off);display:flex;align-items:center;justify-content:center;text-align:center">
         <div>
           <p style="font-family:var(--fh);font-size:1rem;font-style:italic;color:var(--burgundy);margin-bottom:1rem">"You will always know where you stand and what comes next."</p>
-          <a href="mailto:info@esotericfarm.com" class="btn-primary">Questions? Send us an email</a>
+          <a href="#start" class="btn-primary">Start the conversation</a>
         </div>
       </div>
     </div>
@@ -959,5 +1167,9 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
+<div class="callbar">
+  <a href="tel:3476882963">Call Kersten · 347-688-2963</a>
+  <a href="#start">Email us</a>
+</div>
 </body>
 </html>
